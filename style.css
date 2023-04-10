@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --bgColor: #0C1121;
+  --primaryColor: #F4F2EC;
+  --primaryFont: 'VT323', monospace;
+  --secondaryFont: 'Press Start 2P', cursive;
+  --tertiaryFont: 'Noto Sans JP', sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--bgColor);
+  cursor: url(assets/arrow.png), auto;
+}
+
+.webpage-title {
+  position: absolute;
+  /* background-color: lightcyan; */
+  font-family: var(--secondaryFont);
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 590px;
+  height: 220px;
+  font-size: 48px;
+  line-height: 62px;
+  text-align: center;
+  letter-spacing: -0.08em;
+  text-shadow: 2px 5px #18402A;
+  color: var(--primaryColor);
+  animation: fadeOut 5s forwards;
+}
+
+.subtitle {
+  position: absolute;
+  font-family: var(--secondaryFont);
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 100px;
+  width: 592px;
+  height: 106px;
+  font-size: 18px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: -0.08em;
+  text-shadow: 2px 5px #18402A;
+  color: var(--primaryColor);
+  animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* end of base */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  position: relative;
+}
+
+.canvas {
+  background-image: url(assets/forest-bg.png);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 550px;
+}
+
+.player {
+  background-image: url(assets/cowboy-bebop.png);
+  background-size: 110px;
+  height: 105px;
+  width: 90px;
+  position: absolute;
+  left: 41%;
+  top: 58%;
+  transition: 0.2s;
+}
+
+.vending-machine {
+  background-image: url(assets/vending-machine.png);
+  background-size: 180px;
+  height: 180px;
+  width: 150px;
+  position: absolute;
+  top: 63.2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
+  cursor: url(assets/pointer.png), auto;
+}
+
+.van {
+  background-image: url(assets/van-deco.png);
+  background-size: 500px;
+  height: 320px;
+  width: 450px;
+  position: absolute;
+  right: 55px;
+  bottom: 12.8rem;
+}
+
+/* end of canvas */
+
+.popup {
+  font-family: var(--primaryFont);
+  text-align: left;
+  position: absolute;
+  right: 36.9%;
+  top: 43%;
+  width: 140px;
+  height: 35px;
+  font-size: 18px;
+  word-spacing: -2px;
+  background-color: var(--primaryColor);
+  padding: 10px;
+  opacity: 0;
+}
+
+.corner {
+  position: absolute;
+  width: 30px;
+  right: 44%;
+  top: 49%;
+  transform: rotate(269deg);
+  opacity: 0;
+}
+
+.vertical-text {
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  letter-spacing: 2px;
+  writing-mode: vertical-lr;
+  opacity: 0.9;
+  animation: fadeOut 5s forwards;
+}
+
+.vertical-text h1 {
+  margin: 0;
+  color: var(--primaryColor);
+  font-size: 20px;
+  font-family: var(--tertiaryFont);
+}
+
+
+/* dialogue box */
+
+.story-box {
+  font-family: var(--primaryFont);
+  position: absolute;
+  color: var(--primaryColor);
+  /* background-color: cyan; */
+  width: 400px;
+  bottom: 15%;
+  right: 35%;
+  font-size: 20px;
+}
+
+.player-box {
+  backdrop-filter: blur(8px);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-family: var(--primaryFont);
+  position: absolute;
+  text-align: justify;
+  background: rgba(56, 62, 80, 0.2);
+  color: var(--primaryColor);
+  width: 600px;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  top: 80%;
+  opacity: 0;
+}
+
+.player-box img {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 165px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.sub {
+  font-size: 14px;
+  margin-top: -50px;
+  margin-bottom: 9px;
+  margin-top: 3px;
+}
+
+/* sub icon 
+.sub img {
+  margin-left: 80px;
+  width: 100px;
+  height: 90px;
+}
+*/
+
+.weapon-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 22px;
+  font-size: 25px;
+}
+
+.weapon-list div:hover::before {
+  content: '▸ ';
+  position: relative;
+}
+
+
+span {
+  font-size: 10px;
+}
+
+.scoreboard {
+  position: absolute;
+  left: 2%;
+  top: 96%;
+  /* background-color: beige; */
+  font-family: var(--primaryFont);
+}
+
+#p1 {
+  color: var(--primaryColor);
+  font-size: 30px;
+}
+
+#p2 {
+  margin-top: -35px;
+  color: #D7565F;
+  font-size: 25px;
+}
+
+
+.dmg-vendmachine {
+  position: absolute;
+  top: 60.5%;
+  left: 41.5%;
+  color: rgb(231, 69, 69);
+  font-size: 23px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dmg-vendmachine.show {
+  animation: anim 1s 1;
+}
+
+.dmg-player {
+  position: absolute;
+  left: 54.5%;
+  top: 56%;
+  color: rgb(231, 69, 69);
+  font-size: 23px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dmg-player.show {
+  animation: anim 1s 1;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.game-result {
+  position: absolute;
+  margin-top: 80px;
+  font-family:  var(--secondaryFont);
+  color: var(--primaryColor);
+  border: 5px;
+  padding: 20px;
+}
+
+.win-message {
+  display: none;
+  text-align: center;
+  font-size: 40px;
+  line-height: 2px;
+}
+
+.win-message h3 {
+  margin-top: -20px;
+  word-spacing: -25px;
+}
+
+.win-message img {
+  width: 70px;
+  height: auto;
+}
+
+.lose-message {
+  display: none;
+  font-size: 40px;
+  line-height: 10px;
+}
+
+#preloader {
+  background: #000 url(assets/loading-bar.gif) no-repeat center center;
+  background-size: 40%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+/*
+#not-supported {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  text-align: center;
+  z-index: 999;
+}
+
+#not-supported p {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+*/
